@@ -30,7 +30,211 @@
 <div id="overlay" aria-hidden="true"><div class="letter-modal" role="dialog" aria-modal="true" aria-labelledby="letterTitle"><div class="close-row"><button class="close-btn" id="closeBtn" aria-label="Close letter">×</button></div><div class="letter-label" id="letterLabel">letter 01</div><h2 class="letter-title" id="letterTitle">to my dreamgirl</h2><img class="letter-photo" id="photo" alt="Memory photo"><div class="letter-text" id="text"></div></div></div>
 <script>
 const $=id=>document.getElementById(id),music=$('music'),landing=$('landing'),intro=$('intro'),lettersScreen=$('letters-screen'),overlay=$('overlay'),grid=$('grid'),counter=$('counter'),videoSection=$('memory-video'),videoFrame=$('videoFrame');
-const memories=Array.from({length:22},(_,i)=>({image:`${i+1}.jpeg`,letter:`Replace this with your letter ${i+1}.`}));
+const memories=const memories = [
+  {
+    image: "1.jpeg",
+    letter: `I don’t think there’s a single problem in this entire universe that this eye mask and Brooklyn 99 with you cannot fix. I have never been more at peace than this.
+
+A happy place for me will always have this memory at its core. Jake to my Charles.
+
+For someone who hated sharing things, I grew pretty fond of sharing them with you. I hope we always share this life and it doesn’t fade away.`
+  },
+
+  {
+    image: "2.jpeg",
+    letter: `I think I liked waking up when I knew you were around. I liked coming back to a place where you were present.
+
+I always found solace in your room. I didn’t even know home could be such a heartwarming place, such a peaceful place to come back to, to always have.
+
+All it took was maggi, eggs, aloo pithika, and some cigarettes, and occasionally the famous pet fish. Comfort was simply knowing that you were there.`
+  },
+
+  {
+    image: "3.jpeg",
+    letter: `Mafia boss and his sidechicks.
+
+I think that’s what we named this story. The only person I’d even wanna be a sidechick for happily.`
+  },
+
+  {
+    image: "4.jpeg",
+    letter: `His death brought peace upon us is all I have to say for this one.
+
+May his soul rest in peace. KP and his mastermind planning will never be forgotten.
+
+Someday I’ll reach the high that you reached that day.`
+  },
+
+  {
+    image: "5.jpeg",
+    letter: `Dhurandhar.
+
+To be loved is to be known. I didn’t even have to say that I was hurt that he didn’t show up, you just knew.
+
+And between the movie and the popcorn, I completely forgot everything else.
+
+I hope everyone gets to have people who they can rely on the way I could rely on you.`
+  },
+
+  {
+    image: "6.jpeg",
+    letter: `I remember your 21st birthday. I remember the dress. It feels like yesterday.
+
+You had to give a speech, and you said that my presence makes you feel cared for and loved. And I just knew in that moment that you and I were meant to be.
+
+I never knew my presence could make someone happy. And I am glad it did.
+
+Sitting across from you that day, I knew this love was forever.`
+  },
+
+  {
+    image: "7.jpeg",
+    letter: `Bholu with his girlfriend.
+
+God, he loves you a lot, you know. He literally smiles when you’re around.
+
+He’s sad he couldn’t be there with you on your birthday, and he wants you to be there for the next one.
+
+Haan, lazy hai woh. Khud nahi jayega.`
+  },
+
+  {
+    image: "8.jpeg",
+    letter: `I think this captures our friendship thoda in its essence.
+
+I mean, you can see the chaos through the weird frame.
+
+You match my freak quite literally.`
+  },
+
+  {
+    image: "9.jpeg",
+    letter: `I am guessing this was on our way back from Summerhouse.
+
+Do I remember the night? Absolutely not.
+
+But do I remember having fun? Hell yes.
+
+As long as you’re there, I know it’s gonna be fun.`
+  },
+
+  {
+    image: "10.jpeg",
+    letter: `Pre-birthday banters.
+
+Like I said that day, there are only 2 people who can say that if I have them, I won’t need anybody else, and they’d be right about it.
+
+I remember not even noticing anything else. All I saw was you guys, and my instinct was to reach out for you before anything else.`
+  },
+
+  {
+    image: "11.jpeg",
+    letter: `Finding a birthday dress is a tough job, but it’s easier when you have someone who will go to all the shops with you and then agree that nothing’s worthwhile and settle for fries and a trip to Miniso for useless purchases.
+
+I am now curious about what that guy had written on the note.`
+  },
+
+  {
+    image: "12.jpeg",
+    letter: `Man, I loved selecting outfits with you because we’d laugh so much about it.
+
+I remember we put together an outfit once, and we thought it killed. The moment I wore it, I wanted to die because I looked like a beggar.
+
+But we laughed so much because of that.
+
+Tarang was fun in that way. Wearing heels and dying after literally thinking we could do it.`
+  },
+
+  {
+    image: "13.jpeg",
+    letter: `This picture should remind you that we’re sitting because our legs gave up and we didn’t wanna accept it.`
+  },
+
+  {
+    image: "14.jpeg",
+    letter: `You laughed at me so much for forgetting to bring clothes and then drenched your own outfit.
+
+I don’t remember the order. What I do remember is the sutta we had that was nothing short of peace.
+
+And the picture that failed to capture the peace.`
+  },
+
+  {
+    image: "15.jpeg",
+    letter: `Haha, this was before the iconic river rafting.
+
+We had such good breakfast and coffee.`
+  },
+
+  {
+    image: "16.jpeg",
+    letter: `LASER TAG.
+
+I can’t believe I shot you so many times after saying you need to be safe.
+
+But we were so epic in the first fight. We beat the other team like they meant nothing to us.
+
+Which was kinda true.`
+  },
+
+  {
+    image: "17.jpeg",
+    letter: `The ICONIC river rafting that I will never ever forget.
+
+I was trying so hard to push away the mota. Pata nahi kaha kaha seh aa jaate hai.
+
+The way we just looked at each other when the instructor asked us to jump, and then we jumped like it was the end of it.
+
+Man, I miss that cold water.`
+  },
+
+  {
+    image: "18.jpeg",
+    letter: `This reminds me of the chai and sutta after the rafting.
+
+And the random ass clothes we selected from that shop, you know. We even convinced aunty to let us change there.
+
+And we asked random people for lifts before deciding to walk, and then stopping midway for Gangajal again.`
+  },
+
+  {
+    image: "19.jpeg",
+    letter: `My department farewell.
+
+I can’t believe it’s over.
+
+I remember I couldn’t get one good picture until you said something, and I laughed so hard that I forgot what we were doing.
+
+And I think that’s the only reason I ended up getting good pictures.`
+  },
+
+  {
+    image: "20.jpeg",
+    letter: `The sassy outfit for a Westside date.
+
+The rain was so good though. I mean, we barely got an auto, and we had to stand for a long time, and God knows what troubles found us.
+
+But we were so happy in Westside, even though we found nothing worthwhile and judged every single clothing item they had.`
+  },
+
+  {
+    image: "21.jpeg",
+    letter: `Typical girlfriend picture.
+
+24 karat gold.`
+  },
+
+  {
+    image: "22.jpeg",
+    letter: `Us after deciding we still need boba and we don’t have a timeline to get home.
+
+I hope you know that there’s no one else I’d have rather done this 4th year housing shenanigan with.
+
+You were, are, and always will be my Dreamgirl.
+
+Happy 22.`
+  }
+];
 const opened=new Set();
 const icons=['✿','❀','♡','✦'];for(let i=0;i<28;i++){const p=document.createElement('div');p.className='petal';p.textContent=icons[Math.floor(Math.random()*icons.length)];p.style.left=`${Math.random()*100}vw`;p.style.fontSize=`${12+Math.random()*18}px`;p.style.animationDuration=`${9+Math.random()*9}s`;p.style.animationDelay=`${-Math.random()*12}s`;$('petals').appendChild(p)}
 function startExperience(){landing.classList.add('hidden');intro.classList.remove('hidden');music.play().catch(()=>{});window.scrollTo({top:0,behavior:'instant'})}$('lilyTrigger').addEventListener('click',startExperience);$('lilyTrigger').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();startExperience()}});
