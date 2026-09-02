@@ -46,7 +46,68 @@ button{
   transition:.3s;
 }
 
-button:hover{
+button:hover
+  .grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:22px;
+max-width:1100px;
+margin:50px auto;
+}
+
+.envelope{
+cursor:pointer;
+}
+
+.mail{
+position:relative;
+aspect-ratio:1;
+background:#E7DAFF;
+border-radius:22px;
+overflow:hidden;
+box-shadow:0 18px 30px rgba(120,90,180,.15);
+transition:.35s;
+}
+
+.envelope:hover .mail{
+transform:translateY(-8px) rotate(-1deg);
+}
+
+.ribbon{
+position:absolute;
+width:84px;
+height:18px;
+background:rgba(255,255,255,.28);
+left:50%;
+top:16px;
+transform:translateX(-50%);
+border-radius:999px;
+}
+
+.flap{
+position:absolute;
+inset:0;
+height:56%;
+background:#D5BFFF;
+clip-path:polygon(0 0,100% 0,50% 100%);
+}
+
+.seal{
+position:absolute;
+left:50%;
+top:43%;
+transform:translate(-50%,-50%);
+width:44px;
+height:44px;
+border-radius:50%;
+background:white;
+display:flex;
+align-items:center;
+justify-content:center;
+color:#A274F5;
+font-size:18px;
+}
+  {
   transform:translateY(-2px);
 }
 
@@ -304,7 +365,28 @@ const env=document.createElement("div");
 
 env.className="envelope";
 
-env.innerHTML=\`
+env.innerHTML=
+  <div class="mail">
+
+  <div class="ribbon"></div>
+
+  <div class="flap"></div>
+
+  <div class="seal">♥</div>
+
+  <div style="
+      position:absolute;
+      bottom:12px;
+      width:100%;
+      text-align:center;
+      font-size:22px;
+      font-weight:bold;
+      color:#6B4FA4;">
+    ${i+1}
+  </div>
+
+</div>
+  \`
 
 <div class="mail">
 
