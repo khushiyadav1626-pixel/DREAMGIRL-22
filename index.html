@@ -2,35 +2,367 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Dreamgirl ✿</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dreamgirl</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Caveat:wght@500&display=swap" rel="stylesheet">
+
 <style>
-:root{--lav:#E8D9FF;--deep:#7653B8;--paper:#FFFCFD}
-*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
-body{font-family:'Cormorant Garamond',serif;background:#fff;color:#5D4A79;overflow-x:hidden}
-.hidden{display:none!important}.page{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:32px}
-.bg{background:radial-gradient(circle at top,#fff 0%,#FBF8FF 20%,#F3EBFF 65%,#E9DCFF 100%)}
-button{font-family:inherit}
-.btn{border:none;background:#8B5CF6;color:#fff;padding:16px 34px;border-radius:999px;font-size:18px;cursor:pointer;box-shadow:0 14px 30px rgba(139,92,246,.28);transition:.3s}.btn:hover{transform:translateY(-2px)}
-.glass{background:rgba(255,255,255,.55);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.45)}
-#petals{position:fixed;inset:0;pointer-events:none;overflow:hidden}.petal{position:absolute;color:#C4A1FF;opacity:.18;animation:fall linear infinite}@keyframes fall{from{transform:translateY(-10vh)}to{transform:translateY(110vh) translateX(35px)}}
-.envelope{cursor:pointer}.mail{position:relative;aspect-ratio:1;background:#E3D5FF;border-radius:24px;overflow:hidden;box-shadow:0 18px 32px rgba(120,90,180,.15);transition:.35s}.envelope:hover .mail{transform:translateY(-8px) rotate(-1deg)}.ribbon{position:absolute;width:86px;height:18px;background:rgba(255,255,255,.3);left:50%;top:16px;transform:translateX(-50%);border-radius:999px}.flap{position:absolute;inset:0;height:56%;background:#D2BBFF;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:.5s}.envelope:hover .flap{transform:rotateX(22deg)}.seal{position:absolute;left:50%;top:43%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:#fff;display:grid;place-items:center;color:#A274F5;box-shadow:0 5px 10px rgba(0,0,0,.1)}
-.overlay{position:fixed;inset:0;background:rgba(249,244,255,.96);backdrop-filter:blur(10px);display:none;overflow:auto;padding:22px;z-index:50}.overlay.show{display:block}.paper{max-width:760px;margin:40px auto;background:var(--paper);border-radius:28px;padding:28px;box-shadow:0 24px 60px rgba(0,0,0,.14);background-image:linear-gradient(rgba(181,154,235,.06) 1px,transparent 1px);background-size:100% 38px}.polaroid{background:#fff;padding:12px 12px 28px;border-radius:8px;transform:rotate(-2deg);box-shadow:0 12px 24px rgba(0,0,0,.12);position:relative}.tape{position:absolute;top:-6px;left:50%;transform:translateX(-50%) rotate(-2deg);width:62px;height:16px;background:rgba(237,228,255,.9);border-radius:4px}.polaroid img{width:100%;height:360px;object-fit:cover;border-radius:6px}.note{font-family:'Caveat',cursive;font-size:31px;line-height:1.65;white-space:pre-wrap;margin-top:28px}.fade{animation:fade 1.2s ease forwards}@keyframes fade{to{opacity:1;transform:none}}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+
+body{
+  font-family:'Cormorant Garamond',serif;
+  background:#fff;
+  overflow-x:hidden;
+  color:#5E4A79;
+}
+
+.hidden{display:none;}
+
+.page{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:32px;
+}
+
+.lavender{
+  background:
+  radial-gradient(circle at top,#ffffff 0%,#fbf8ff 25%,#f2e9ff 65%,#e9dcff 100%);
+}
+
+button{
+  border:none;
+  border-radius:999px;
+  padding:16px 34px;
+  background:#8B5CF6;
+  color:white;
+  font-size:18px;
+  cursor:pointer;
+  transition:.3s;
+}
+
+button:hover{
+  transform:translateY(-2px);
+}
+
+#petals{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+}
+
+.petal{
+  position:absolute;
+  color:#C4A1FF;
+  opacity:.18;
+  animation:fall linear infinite;
+}
+
+@keyframes fall{
+  from{transform:translateY(-10vh);}
+  to{transform:translateY(110vh) translateX(35px);}
+}
 </style>
 </head>
+
 <body>
-<audio id="music" src="song.mp3" loop></audio><div id="petals"></div>
-<section id="error" class="page"><h1 style="font-size:64px;color:#DC2626">Something went wrong.</h1><p style="margin-top:16px;font-size:22px;color:#777">click on the lily to fix it</p><svg id="lily" width="150" height="150" viewBox="0 0 150 150" style="margin-top:36px;cursor:pointer;transition:.35s"><defs><radialGradient id="g" cx="50%" cy="40%" r="60%"><stop offset="0%" stop-color="#fff"/><stop offset="100%" stop-color="#CAA8FF"/></radialGradient></defs><g transform="translate(75 74)"><ellipse rx="18" ry="38" fill="url(#g)" transform="rotate(0) translate(0 -22)"/><ellipse rx="18" ry="38" fill="url(#g)" transform="rotate(60) translate(0 -22)"/><ellipse rx="18" ry="38" fill="url(#g)" transform="rotate(120) translate(0 -22)"/><ellipse rx="18" ry="38" fill="url(#g)" transform="rotate(180) translate(0 -22)"/><ellipse rx="18" ry="38" fill="url(#g)" transform="rotate(240) translate(0 -22)"/><ellipse rx="18" ry="38" fill="url(#g)" transform="rotate(300) translate(0 -22)"/><circle r="9" fill="#F4D35E"/></g></svg></section>
-<section id="intro" class="page bg hidden"><div class="glass" style="padding:10px 20px;border-radius:999px"><p style="letter-spacing:.35em;text-transform:uppercase;font-size:12px;color:#8B5CF6">for my dreamgirl</p></div><h1 style="margin-top:30px;font-size:70px;color:#5B3F93">Happy 22nd</h1><h2 style="font-size:56px;color:#8B5CF6;font-style:italic">Dreamgirl</h2><p style="max-width:520px;margin-top:28px;font-size:22px;line-height:1.8">i couldn't fit everything i wanted to tell you into one letter, so i made twenty-two.</p><button id="begin" class="btn" style="margin-top:42px">sit with me for 22 moments</button></section>
-<section id="letters" class="bg hidden" style="min-height:100vh;padding:70px 24px"><div style="text-align:center;margin-bottom:54px"><p style="letter-spacing:.3em;text-transform:uppercase;font-size:12px;color:#A78BFA">open them in any order</p><h2 style="margin-top:12px;font-size:58px;color:#5B3F93">22 Moments</h2></div><div id="grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:22px;max-width:1100px;margin:auto"></div><div style="text-align:center;margin-top:70px"><button id="videoBtn" class="btn">i still have time</button></div><div id="videoSection" class="hidden" style="margin-top:80px;text-align:center"><p style="font-size:28px;color:#8B5CF6;font-style:italic;margin-bottom:22px">there was one memory that never fit inside an envelope.</p><video controls style="width:min(900px,100%);border-radius:28px;box-shadow:0 20px 40px rgba(0,0,0,.18)"><source src="dreamgirl.mp4" type="video/mp4"></video></div></section>
-<div id="overlay" class="overlay"><div class="paper"><div style="display:flex;justify-content:space-between;align-items:start"><div><p id="label" style="letter-spacing:.3em;text-transform:uppercase;font-size:12px;color:#A78BFA"></p><h3 style="font-size:42px;color:#5B3F93">to my dreamgirl</h3></div><button id="close" style="font-size:40px;border:none;background:none;color:#8B5CF6;cursor:pointer">×</button></div><div class="polaroid" style="margin-top:28px"><div class="tape"></div><img id="photo" src=""><p style="text-align:center;color:#B8A8C9;margin-top:12px">a little memory ♡</p></div><div id="text" class="note"></div></div></div>
+
+<audio id="music" src="song.mp3" loop></audio>
+
+<div id="petals"></div>
+
+<!-- PAGE 1 -->
+
+<section id="error" class="page">
+
+<h1 style="font-size:64px;color:#DC2626;">
+Something went wrong.
+</h1>
+
+<p style="margin-top:18px;color:#777;font-size:22px;">
+click on the lily to fix it
+</p>
+
+<img
+id="lily"
+src="lily.png"
+style="width:180px;margin-top:40px;cursor:pointer;transition:.35s;"
+>
+
+</section>
+<!-- PAGE 2 -->
+
+<section id="intro" class="page lavender hidden">
+
+<p style="letter-spacing:.35em;font-size:12px;color:#9F75FF;">
+FOR MY DREAMGIRL
+</p>
+
+<h1 style="font-size:70px;color:#5B3F93;margin-top:28px;">
+Happy 22nd
+</h1>
+
+<h2 style="font-size:56px;color:#8B5CF6;font-style:italic;">
+Dreamgirl
+</h2>
+
+<p style="max-width:520px;margin-top:26px;font-size:22px;line-height:1.8;">
+i couldn't fit everything i wanted to tell you into one letter,
+so i made twenty-two.
+</p>
+
+<button id="start" style="margin-top:40px;">
+sit with me for 22 moments
+</button>
+
+</section>
+
+<!-- PAGE 3 -->
+
+<section id="letters" class="lavender hidden" style="padding:70px 24px;min-height:100vh;">
+
+<div style="text-align:center;">
+
+<p style="letter-spacing:.3em;font-size:12px;color:#A78BFA;">
+OPEN THEM IN ANY ORDER
+</p>
+
+<h1 style="font-size:56px;color:#5B3F93;margin-top:12px;">
+22 Moments
+</h1>
+
+</div>
+
+<div id="grid"
+style="
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:22px;
+max-width:1100px;
+margin:50px auto;
+">
+
+</div>
+
+<div style="text-align:center;margin-top:30px;">
+
+<button id="videoBtn">
+i still have time
+</button>
+
+</div>
+
+<div id="videoSection"
+class="hidden"
+style="margin-top:70px;text-align:center;">
+
+<p style="font-size:28px;color:#8B5CF6;font-style:italic;">
+there was one memory that never fit inside an envelope.
+</p>
+
+<video controls
+style="width:90%;max-width:900px;border-radius:24px;margin-top:22px;">
+<source src="dreamgirl.mp4">
+</video>
+
+</div>
+
+</section>
+<!-- LETTER OVERLAY -->
+
+<div id="overlay"
+style="
+position:fixed;
+inset:0;
+background:rgba(250,245,255,.96);
+backdrop-filter:blur(8px);
+display:none;
+overflow:auto;
+padding:22px;
+">
+
+<div
+style="
+max-width:720px;
+margin:40px auto;
+background:white;
+border-radius:28px;
+padding:26px;
+">
+
+<div style="text-align:right;">
+
+<span id="close"
+style="font-size:40px;cursor:pointer;color:#8B5CF6;">
+×
+</span>
+
+</div>
+
+<p id="label"
+style="letter-spacing:.3em;font-size:12px;color:#A78BFA;">
+</p>
+
+<h2 style="font-size:42px;color:#5B3F93;">
+to my dreamgirl
+</h2>
+
+<img id="photo"
+style="
+width:100%;
+height:340px;
+object-fit:cover;
+border-radius:10px;
+margin-top:24px;
+">
+
+<div id="text"
+style="
+font-family:'Caveat',cursive;
+font-size:30px;
+line-height:1.6;
+white-space:pre-wrap;
+margin-top:26px;
+">
+</div>
+
+</div>
+
+</div>
+
 <script>
-const letters=Array.from({length:22},(_,i)=>({image:`images/${i+1}.jpg`,note:`Dear Dreamgirl,\n\nReplace this with your ${i+1}th letter.\n\nTell her one beautiful memory.\n\nLove,\nalways.`}));
-const icons=["✿","❀","♡","✦"];for(let i=0;i<26;i++){const p=document.createElement("div");p.className="petal";p.textContent=icons[Math.floor(Math.random()*icons.length)];p.style.left=Math.random()*100+"vw";p.style.fontSize=(14+Math.random()*18)+"px";p.style.animationDuration=(8+Math.random()*10)+"s";p.style.animationDelay=(-Math.random()*8)+"s";petals.appendChild(p)}
-lily.onclick=()=>{music.play().catch(()=>{});error.classList.add("hidden");intro.classList.remove("hidden")};begin.onclick=()=>{intro.classList.add("hidden");letters.classList.remove("hidden");window.scrollTo({top:0,behavior:"smooth"})};
-letters.forEach((l,i)=>{const e=document.createElement("div");e.className="envelope";e.innerHTML=`<div class="mail"><div class="ribbon"></div><div class="flap"></div><div class="seal">♥</div><div style="position:absolute;bottom:12px;width:100%;text-align:center;font-size:22px;font-weight:bold;color:#6B4FA4">${i+1}</div></div>`;e.onclick=()=>{label.textContent="LETTER "+(i+1);photo.src=l.image;text.textContent=l.note;overlay.classList.add("show")};grid.appendChild(e)});
-close.onclick=()=>overlay.classList.remove("show");overlay.onclick=e=>{if(e.target===overlay)overlay.classList.remove("show")};videoBtn.onclick=()=>{videoSection.classList.remove("hidden");videoSection.scrollIntoView({behavior:"smooth"})}
+
+// -------- PETALS --------
+
+const icons=["✿","❀","♡","✦"];
+
+for(let i=0;i<24;i++){
+
+const p=document.createElement("div");
+
+p.className="petal";
+
+p.innerText=icons[Math.floor(Math.random()*icons.length)];
+
+p.style.left=Math.random()*100+"vw";
+
+p.style.fontSize=(14+Math.random()*18)+"px";
+
+p.style.animationDuration=(8+Math.random()*8)+"s";
+
+p.style.animationDelay=(-Math.random()*8)+"s";
+
+petals.appendChild(p);
+
+}
+
+// -------- YOUR LETTERS --------
+
+const memories=Array.from({length:22},(_,i)=>({
+
+image:"images/"+(i+1)+".jpeg",
+
+letter:"Replace this with your "+(i+1)+"th letter."
+
+}));
+
+// -------- LILY --------
+
+lily.onclick=()=>{
+
+music.play().catch(()=>{});
+
+error.classList.add("hidden");
+
+intro.classList.remove("hidden");
+
+};
+
+// -------- START --------
+
+start.onclick=()=>{
+
+intro.classList.add("hidden");
+
+letters.classList.remove("hidden");
+
+window.scrollTo(0,0);
+
+};
+
+// -------- ENVELOPES --------
+
+memories.forEach((m,i)=>{
+
+const env=document.createElement("div");
+
+env.className="envelope";
+
+env.innerHTML=\`
+
+<div class="mail">
+
+<div class="ribbon"></div>
+
+<div class="flap"></div>
+
+<div class="seal">♥</div>
+
+<div style="position:absolute;bottom:12px;width:100%;text-align:center;font-size:22px;font-weight:bold;color:#6B4FA4;">
+\${i+1}
+</div>
+
+</div>
+
+\`;
+
+env.onclick=()=>{
+
+overlay.style.display="block";
+
+label.innerText="LETTER "+(i+1);
+
+photo.src=m.image;
+
+text.innerText=m.letter;
+
+};
+
+grid.appendChild(env);
+
+});
+
+// -------- CLOSE --------
+
+close.onclick=()=>overlay.style.display="none";
+
+overlay.onclick=e=>{
+
+if(e.target===overlay){
+
+overlay.style.display="none";
+
+}
+
+};
+
+// -------- VIDEO --------
+
+videoBtn.onclick=()=>{
+
+videoSection.classList.remove("hidden");
+
+videoSection.scrollIntoView({behavior:"smooth"});
+
+};
+
 </script>
+
 </body>
 </html>
